@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="2.2" android:compileSdkVersion="32" android:compileSdkVersionCodename="12" package="com.ar055.BDGGame" platformBuildVersionCode="32" platformBuildVersionName="12">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <application android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:label="@string/app_name6" android:icon="@mipmap/ic_launcher" android:name="com.tb.topbetgaming.app.DamanApp" android:allowBackup="false" android:hardwareAccelerated="true" android:supportsRtl="true" android:extractNativeLibs="true" android:usesCleartextTraffic="true" android:roundIcon="@mipmap/ic_launcher_round" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <activity android:name="com.tb.topbetgaming.welcome.DispatchActivity" android:exported="true" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tb.topbetgaming.welcome.WelcomActivity" android:configChanges="orientation|screenSize"/>
+        <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.ar055.BDGGame.fileprovider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <activity android:name="com.tb.topbetgaming.ui.MainActivity" android:exported="true"/>
+        <provider android:name="com.just.agentweb.AgentWebFileProvider" android:exported="false" android:authorities="com.ar055.BDGGame.AgentWebFileProvider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/web_files_public"/>
+        </provider>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.ar055.BDGGame.androidx-startup">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+        </provider>
+    </application>
+</manifest>
